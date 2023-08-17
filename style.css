@@ -61,9 +61,39 @@ input[type=color]{
     transform: scale(1.05);
 }
 
-.gridContainer{
-    display: grid;
+#gridContainer{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* flex-direction: row; */
     border: 1px solid black;
     height: 500px;
     width: 500px;
+    background-color: yellow;
+    box-sizing: content-box;
+}
+
+.box{
+    box-sizing: border-box;
+    background-color: black;
+    /* width: 10px; */
+    /* height: 10px; */
+    border: 0.1rem solid white;
+    /* margin: 0.1rem; */
+    background-clip: content-box;
+    /* padding: 1%; */
+}
+
+
+.box:hover{
+    border: 1px solid white;
+}
+
+.filler{
+    background-color: black;
+}
+
+.unfilled{
+    background-color: white;
 }
