@@ -61,12 +61,11 @@ input[type=color]{
     transform: scale(1.05);
 }
 
-#gridContainer{
-    display: flex;
+/*using flex*/
+
+/* #gridContainer{
+    display: flex; 
     flex-wrap: wrap;
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* flex-direction: row; */
     border: 1px solid black;
     height: 500px;
     width: 500px;
@@ -77,20 +76,35 @@ input[type=color]{
 .box{
     box-sizing: border-box;
     background-color: black;
-    /* width: 10px; */
-    /* height: 10px; */
     border: 0.1rem solid white;
-    /* margin: 0.1rem; */
-    background-clip: content-box;
-    /* padding: 1%; */
+    background-clip: content-box; padding over bg color
+} */
+
+/* using display:grid; */
+
+#gridContainer{
+    display: grid;
+    border: 1px solid black;
+    height: 500px;
+    width: 500px;
+    /* background-color: yellow; */
+    box-sizing: content-box;
 }
 
+.box{
+    /* display: grid; */
+    /* grid-template-columns: repeat(auto-fill, 100px);*/
+    box-sizing: border-box;
+    /* background-color: white; */
+    border: 0.01rem solid black;
+    background-clip: content-box; 
+}
 
-.box:hover{
+/* .box:hover{
     border: 1px solid white;
-}
+} */
 
-.filler{
+.filled{
     background-color: black;
 }
 

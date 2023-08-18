@@ -23,8 +23,9 @@ function resetGrid(){
         gridContainer.appendChild(box)
         box.classList.add('box')
         box.style = `width: ${500/sizeSlide.value}px; height: ${500/sizeSlide.value}px;` 
-        console.log('slide:',sizeSlide.value, box)
-        // box.addEventListener("mouseover", )
+        // console.log('slide:',sizeSlide.value, box)
+        gridContainer.style = `grid-template-columns: repeat(auto-fill, ${500/sizeSlide.value}px);`
+        box.addEventListener("mouseover", (e)=>fillGrid(e.currentTarget))
     }
     // gridContainer.style = `grid-template-rows: repeat(auto-fill, ${64/sizeSlide.value}%)`
     // gridContainer.style = `grid-template-columns: repeat(auto-fill, ${64/sizeSlide.value}%)`
