@@ -5,6 +5,7 @@ const colorPicker = document.getElementById('colorPicker');
 const colorMode = document.getElementById('colorMode');
 const clearGrid = document.getElementById('clear');
 // let box = document.querySelector('box');
+let boxes = [];
 
 sizeSlide.addEventListener('input', sizeValue);
 colorMode.addEventListener('click', colorChange);
@@ -17,7 +18,8 @@ function resetGrid(){
     while(gridContainer.firstChild){
         gridContainer.removeChild(gridContainer.firstChild);
     }
-    let boxes = new Array(sizeSlide.value**2)
+    boxes = new Array(sizeSlide.value**2)
+    console.log('inside resetGrid function' +boxes)
     for(let i = 0; i < boxes.length; i++){
         const box = document.createElement('div')
         gridContainer.appendChild(box)
@@ -26,6 +28,8 @@ function resetGrid(){
         // console.log('slide:',sizeSlide.value, box)
         gridContainer.style = `grid-template-columns: repeat(auto-fill, ${500/sizeSlide.value}px);`
         box.addEventListener("mouseover", (e)=>fillGrid(e.currentTarget))
+        boxes[i] = box ;
+        console.log('boxes[i] = box ;'+ boxes)
     }
     // gridContainer.style = `grid-template-rows: repeat(auto-fill, ${64/sizeSlide.value}%)`
     // gridContainer.style = `grid-template-columns: repeat(auto-fill, ${64/sizeSlide.value}%)`
@@ -54,7 +58,9 @@ function fillGrid(box){
 }
 
 function clear(){
+    console.log('inside clear function' +boxes)
     boxes.forEach(box => {
+        console.log('inside clear function loops')
         box.classList.remove('filled');
         box.classList.add('unfilled');  
     });
